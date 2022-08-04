@@ -1,0 +1,17 @@
+package com.taher.projectone;
+
+public class Bat extends Mammal {
+
+	public Bat() {
+		// TODO Auto-generated constructor stub
+		super();
+		this.energyLevel = 300;
+	}
+	
+	public void fly() {
+		this.energyLevel -= 50;
+		System.out.println("Bat taking off now.. flapping.." + energyLevel);
+
+	}
+
+}

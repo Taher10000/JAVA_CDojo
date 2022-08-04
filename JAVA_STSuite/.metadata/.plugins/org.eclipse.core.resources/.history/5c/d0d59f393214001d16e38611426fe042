@@ -1,0 +1,38 @@
+package com.cardgame.highcard;
+import java.util.ArrayList;
+
+
+public class HighCard {
+public Deck deck;
+public Card playerCard;
+public String name;
+	public HighCard(Deck deck, Card drawnCard, String name) {
+		this.deck = deck;
+		this.playerCard = drawnCard;
+		this.name = name;
+		
+		// TODO Auto-generated constructor stub
+		
+	}
+	public void compareCards(HighCard player2) {
+		if(player2.playerCard.getRank() > this.playerCard.getRank()) {
+			System.out.println("Player 2 WINS!!!");
+			
+		}
+		else if (this.playerCard.getRank() > player2.playerCard.getRank()){
+			System.out.println("Player1 WINS!!!");
+			
+		}
+		else {
+			System.out.println("DRAW!!!");
+		}
+			
+		
+	}
+	public void addPlayer() {
+		System.out.println("Enter Your Name: ");
+	}
+	
+	
+	
+}

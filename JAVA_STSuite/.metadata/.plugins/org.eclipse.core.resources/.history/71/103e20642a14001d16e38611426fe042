@@ -1,0 +1,19 @@
+package com.cardgame.highcard;
+
+public class TestDeck {
+
+	public static void main(String[] args) {
+		
+//		Deck myDeck = new Deck();
+//		for (Card card: myDeck.getCards()) {
+//			card.showCard();
+		
+		
+//	}
+		HighCard player1 = new HighCard();
+		for (Card card: player1.deck.getCards()) {
+			card.showCard();
+	}
+		
+}
+}

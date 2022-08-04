@@ -1,0 +1,21 @@
+package com.taher.projectone;
+
+public class Gorilla extends Mammal{
+	public Gorilla() {
+		super();
+	}
+	public void throwSomething() {
+		System.out.println("Throwing a stick.");
+		energyLevel -= 5;
+		
+	}
+	public void eatBananas() {
+		System.out.println("Eating bananas.");
+		energyLevel += 10;
+	}
+	public void climb() {
+		System.out.println("Climbing tree.");
+		energyLevel -= 10;
+
+	}
+}

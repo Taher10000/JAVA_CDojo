@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+/Users/tahersmac/Desktop/JAVA_CDojo/JAVA_STSuite/.metadata/.plugins/org.eclipse.jdt.core
+1959158317.index
+1880033667.index
+2262205044.index
+1865797976.index

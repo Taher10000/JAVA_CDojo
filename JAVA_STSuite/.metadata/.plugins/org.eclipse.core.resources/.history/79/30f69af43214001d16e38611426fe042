@@ -1,0 +1,38 @@
+package com.cardgame.highcard;
+
+
+public class TestDeck {
+
+	public static void main(String[] args) {
+		
+		Deck myDeck = new Deck();
+		myDeck.Shuffle();
+//		for (Card card: myDeck.getCards()) {
+//			card.showCard();
+//		}
+//		System.out.println("-------------------------------");
+//	
+//		myDeck.draw(); 
+//		System.out.println("-------------------------------");
+//		for (Card card: myDeck.getCards()) {
+//			card.showCard();
+//		}
+		
+		System.out.println("Player1's Card: ");
+		HighCard player1 = new HighCard(myDeck, myDeck.draw());
+		System.out.println("-------------------------------");
+
+		
+		System.out.println("Player2's Card: ");
+		HighCard player2 = new HighCard(myDeck, myDeck.draw());
+		System.out.println("-------------------------------");
+
+		player1.compareCards(player2);
+
+//		for (Card card: player1.deck.getCards()) {
+//			card.showCard();
+		
+	}
+		
+}
+//}

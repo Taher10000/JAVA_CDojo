@@ -1,0 +1,15 @@
+package com.cardgame.highcard;
+
+public class HighCard {
+public Deck deck;
+
+	public HighCard() {
+		this.deck = new Deck();
+		
+		// TODO Auto-generated constructor stub
+		
+	}
+	
+	
+	
+}

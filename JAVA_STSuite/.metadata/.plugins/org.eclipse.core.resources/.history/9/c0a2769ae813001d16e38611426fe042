@@ -1,0 +1,9 @@
+package com.taher.projectone;
+
+public class Bat extends Mammal {
+
+	public Bat() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,9 @@
+package com.cardgame.highcard;
+
+public class HighCard {
+
+	public HighCard() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
