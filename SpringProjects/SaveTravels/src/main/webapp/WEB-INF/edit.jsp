@@ -2,40 +2,21 @@
     pageEncoding="UTF-8"%>
  <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%>
  <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ page isErrorPage="true" %>  
+<%@ page isErrorPage="true" %> 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Save Travels</title>
+<title>Edit Expense</title>
 </head>
 <body>
-    
-<h1>Save Travels</h1>
-<table>
-    <thead>
-        <tr>
-            <th>Expense</th>
-            <th>Vendor</th>
-            <th>Amount</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-   <c:forEach var="expense" items="${expenses}">
-		<tr>
-		<td><c:out value="${expense.name}"></c:out></td>
-		<td><c:out value="${expense.vendor}"></c:out></td>
-		<td><c:out value="${expense.amount}"></c:out></td>
-		<td><a href="/expenses/edit/${expense.id}">edit</a></td>
-		</tr>
-		</c:forEach>
-    </tbody>
-</table>
-	<h2>Add an expense:</h2>
-	<form:form action="/expenses" method="post" modelAttribute="expense">
+
+	<h2>Edit expense:</h2>
+	
+	<form:form action="/expenses/edit/${expense.id}" method="post" modelAttribute="expense">
+		 <input type="hidden" name="_method" value="put">
     <p>
-        <form:label path="name">Name</form:label>
+        <form:label path="name">Expense name</form:label>
         <form:errors path="name"/>
         <form:input path="name"/>
     </p>
