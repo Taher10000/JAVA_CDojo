@@ -15,20 +15,16 @@ import com.codingdojo.lognreg.models.LoginUser;
 import com.codingdojo.lognreg.models.User;
 import com.codingdojo.lognreg.services.UserService;
 
-//.. don't forget to inlcude all your imports! ..
 
 @Controller
 public class HomeController {
  
- // Add once service is implemented:
   @Autowired
   private UserService userServ;
  
  @GetMapping("/")
  public String index(Model model) {
- 
-     // Bind empty User and LoginUser objects to the JSP
-     // to capture the form input
+
      model.addAttribute("newUser", new User());
      model.addAttribute("newLogin", new LoginUser());
      return "index.jsp";
@@ -39,51 +35,31 @@ public class HomeController {
          BindingResult result, Model model, HttpSession session) {
 	 	User user = userServ.register(newUser, result);
      
-     // TO-DO Later -- call a register method in the service 
-     // to do some extra validations and create a new user!
-     
      if(result.hasErrors()) {
-         // Be sure to send in the empty LoginUser before 
-         // re-rendering the page.
+   
          model.addAttribute("newLogin", new LoginUser());
          return "index.jsp";
      }
-     
-     // No errors! 
-     // TO-DO Later: Store their ID from the DB in session, 
-     // in other words, log them in.
+
      session.setAttribute("userId", user.getId());
-     return "redirect:/home";
+     return "redirect:/books";
  }
  
  @PostMapping("/login")
  public String login(@Valid @ModelAttribute("newLogin") LoginUser newLogin, 
          BindingResult result, Model model, HttpSession session) {
      
-     // Add once service is implemented:
       User user = userServ.login(newLogin, result);
  
      if(result.hasErrors() || user == null) {
          model.addAttribute("newUser", new User());
          return "index.jsp";
      }
- 
-     // No errors! 
-     // TO-DO Later: Store their ID from the DB in session, 
-     // in other words, log them in.
      session.setAttribute("userId", user.getId());
  
-     return "redirect:/home";
+     return "redirect:/books";
  }
- @GetMapping("/home")
- public String home(HttpSession session, Model model) {
-	 if(session.getAttribute("userId") == null) {
-		 return "redirect: /logout";
-	 }
-	 Long userId = (Long) session.getAttribute("userId");
-	 model.addAttribute("user", userServ.findById(userId));
-	 return "home.jsp";
- }
+
  
  @GetMapping("/logout")
  public String logout(HttpSession session) {
