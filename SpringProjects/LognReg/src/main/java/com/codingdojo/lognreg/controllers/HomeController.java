@@ -42,6 +42,7 @@ public class HomeController {
      }
 
      session.setAttribute("userId", user.getId());
+     session.setAttribute("userName", user.getUserName());
      return "redirect:/books";
  }
  
@@ -56,7 +57,8 @@ public class HomeController {
          return "index.jsp";
      }
      session.setAttribute("userId", user.getId());
- 
+     session.setAttribute("userName", user.getUserName());
+
      return "redirect:/books";
  }
 

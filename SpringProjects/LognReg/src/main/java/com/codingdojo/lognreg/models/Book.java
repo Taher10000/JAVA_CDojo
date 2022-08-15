@@ -26,13 +26,13 @@ public class Book {
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    private Long id;
 	    @NotNull
-	    @Size(min = 5, max = 200)
+	    @Size(min = 3, max = 200)
 	    private String title;
 	    @NotNull
-	    @Size(min = 5, max = 40, message="Author must be at least 5 characters.")
+	    @Size(min = 3, max = 40, message="Author must be at least 5 characters.")
 	    private String author;
 	    @NotNull
-	    @Size(min = 5, max = 200)
+	    @Size(min = 3, max = 200)
 	    private String thoughts;
 	    
 	   

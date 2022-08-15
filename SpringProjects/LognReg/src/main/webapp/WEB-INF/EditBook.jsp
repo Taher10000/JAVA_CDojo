@@ -7,14 +7,22 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/css/main.css"/>
+<script src="/webjars/jquery/jquery.min.js"></script>
+<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
 <title>Book Share</title>
 </head>
 <body>
-	<h2>Change your Entry:</h2>
-			<div><a href="/home">Back to shelves</a></div>
+	<div class="d-flex justify-content-around">
+	<h2 class="text-warning">Change your Entry:</h2>
+			<a href="/home" class="btn btn-primary">Back to shelves</a></div>
+			<br /><br /><br />
 	
-	<form:form action="/books/${book.id}/edit" method="post" modelAttribute="book">
+	<form:form action="/books/${book.id}/edit" method="post" modelAttribute="book" class = "bg-secondary text-info h6" id="form">
 		 <input type="hidden" name="_method" value="put">
+	 
     <p>
         <form:label path="title">Title</form:label>
         <form:errors path="title"/>

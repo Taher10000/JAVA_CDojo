@@ -1,5 +1,6 @@
 package com.codingdojo.lognreg.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.mindrot.jbcrypt.BCrypt;
@@ -12,7 +13,7 @@ import com.codingdojo.lognreg.models.User;
 import com.codingdojo.lognreg.repositories.UserRepository;
     
 @Service
-public class UserService {
+public class UserService{
     
     @Autowired
     private UserRepository userRepo;
@@ -62,5 +63,8 @@ public class UserService {
     	}
     	return null;
     }
+    public List<User> getAll() {
+		return userRepo.findAll(); 
+	}
 }
 
